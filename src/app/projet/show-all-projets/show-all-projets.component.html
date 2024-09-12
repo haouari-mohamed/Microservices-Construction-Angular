@@ -30,14 +30,23 @@
             <td mat-cell *matCellDef="let element"> {{element.budget}} </td>
           </ng-container>
 
-          <ng-container matColumnDef="Action">
-            <th mat-header-cell *matHeaderCellDef> Action </th>
-            <td id="btns" mat-cell *matCellDef="let element">
-                <button mat-button id="delete" ><i class="pi pi-trash"></i></button>
-                <a mat-button id="update"><i class="pi pi-pencil"></i></a>
-              </td>
+          <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef>Remove</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button  color="warn"  id="remove" (click)="deleteProjet(element.id)">
+                Delete
+              </button>
+            </td>
           </ng-container>
-
+  
+          <ng-container matColumnDef="Update">
+            <th mat-header-cell *matHeaderCellDef>Update</th>
+            <td mat-cell *matCellDef="let element">
+              <a [routerLink]="['/updateprojet', element.id]" mat-button color="primary" id="update" >
+                Update
+              </a>
+            </td>
+          </ng-container>
 
         <ng-container matColumnDef="update">
           <th mat-header-cell *matHeaderCellDef>Update</th>
