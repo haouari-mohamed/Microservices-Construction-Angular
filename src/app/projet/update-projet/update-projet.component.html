@@ -1,1 +1,16 @@
-<p>update-projet works!</p>
+<form [formGroup]="ProjetForm" (ngSubmit)="updateProjet()">
+    <div class="">
+        <input type="text"placeholder="Entrer nom du projet..." formControlName="name" id="name">
+    </div>
+    <div class="">
+        <input type="text"placeholder="Entrer description du projet..." formControlName="description" id="description">
+    </div>
+    <div class="">
+        <input type="date" formControlName="dateFin" id="dateFin">
+    </div>
+    <div class="">
+        <input type="number"placeholder="Entrer budget..." formControlName="budget" id="budget">
+    </div>
+    <button type="submit">update</button>
+
+</form>
