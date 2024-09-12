@@ -23,6 +23,7 @@ export interface Person {
     EN_COURS = 'EN_COURS',
     TERMINER = 'TERMINER'
   }
+
   
   export interface Tache {
     id: number;
@@ -58,3 +59,8 @@ export enum Erole {
     exp: number; 
     roles: string; 
   }
+
+  export interface AssociateRessourceDTO {
+     idTache:number
+
+}
