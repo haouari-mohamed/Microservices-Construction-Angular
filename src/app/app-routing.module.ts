@@ -8,6 +8,7 @@ import { UpdateProjetComponent } from './projet/update-projet/update-projet.comp
 import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
 import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all-resource.component';
 import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
+import { ShowTachesComponent } from './service/tache/show-taches/show-taches.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'resources', component:ShowAllResourceComponent},
   { path: 'updateresource/:id', component:UpdateResourceComponent},
   { path: 'addresource', component: AddResourceComponent },
+  { path: 'showalltaches/:id', component: ShowTachesComponent },
+  { path: 'showalltaches/:id', component: ShowTachesComponent },
 ];
 
 @NgModule({

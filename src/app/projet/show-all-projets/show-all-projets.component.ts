@@ -22,8 +22,8 @@ export class ShowAllProjetsComponent {
     })
     
   }
-  displayedColumns: string[] = ['Name', 'Description', 'Date Creation', 'Date Fin','Budget','Delete','Update'];
-  
+  displayedColumns: string[] = ['Name', 'Description', 'Date Creation', 'Date Fin','Budget','Delete','Update','Taches'];
+
   deleteProjet(id:number){
     this.srv.deleteProjet(id).subscribe(()=>{
       this.ngOnInit()
