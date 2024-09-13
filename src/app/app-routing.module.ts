@@ -10,6 +10,7 @@ import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all
 import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
 import { ShowTachesComponent } from './tache/show-taches/show-taches.component';
 import { AddTacheComponent } from './tache/add-tache/add-tache.component';
+import { UpadateTacheComponent } from './tache/upadate-tache/upadate-tache.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'addresource', component: AddResourceComponent },
   { path: 'showalltaches/:id', component: ShowTachesComponent },
   { path: 'addtache', component: AddTacheComponent },
+  { path: 'updatetache/:id', component: UpadateTacheComponent },
 ];
 
 @NgModule({

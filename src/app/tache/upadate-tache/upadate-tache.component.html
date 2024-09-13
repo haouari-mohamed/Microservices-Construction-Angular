@@ -1,1 +1,19 @@
-<p>upadate-tache works!</p>
+<form [formGroup]="TacheForm" (ngSubmit)="UpdateTache()">
+ 
+    <div class="">
+        <input type="text"placeholder="Entrer description du tache..." formControlName="description" id="description">
+    </div>
+
+    <div class="">
+        <input type="date" formControlName="dateFin" id="dateFin">
+    </div>
+    <div class="">
+    <label for="status">Statut:</label>
+    <select formControlName="status" id="status">
+      <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+    </select>
+  </div>
+   
+    <button type="submit">Update</button>
+
+</form>
