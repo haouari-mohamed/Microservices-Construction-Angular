@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit{
         localStorage.setItem("jwt", res.token)
         const role=this.srp.getRoleFromToken(res.token)
         if(role==Erole.ADMIN){
-          this.route.navigateByUrl('add')
+          this.route.navigateByUrl('addprojet')
         }
         else{
             this.route.navigateByUrl('projets')
