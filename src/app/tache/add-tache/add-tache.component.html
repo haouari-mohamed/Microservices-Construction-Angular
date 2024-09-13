@@ -1,0 +1,15 @@
+<form [formGroup]="tacheForm" (ngSubmit)="submitTache()">
+ 
+    <div class="">
+        <input type="text"placeholder="Entrer description du tache..." formControlName="description" id="description">
+    </div>
+    <div class="">
+        <input type="date" formControlName="dateFin" id="dateFin">
+    </div>
+    <div class="">
+        <input type="number"placeholder="Entrer projet Id..." formControlName="projetId" id="name">
+    </div>
+   
+    <button type="submit">Creer</button>
+
+</form>
