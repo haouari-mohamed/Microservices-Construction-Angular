@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TacheService } from '../tache.service';
-import { Tache } from '../../../model/Construction.model';
+import { TacheService } from '../../service/tache/tache.service';
+import { Tache } from '../../model/Construction.model';
 import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 

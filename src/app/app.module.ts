@@ -19,9 +19,9 @@ import { AddResourceComponent } from './ressource/add-resource/add-resource.comp
 import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
 import { AssociateComponent } from './ressource/associate/associate.component';
 import { ResourceTacheComponent } from './ressource/resource-tache/resource-tache.component';
-import { AddTacheComponent } from './service/tache/add-tache/add-tache.component';
-import { UpadateTacheComponent } from './service/tache/upadate-tache/upadate-tache.component';
-import { ShowTachesComponent } from './service/tache/show-taches/show-taches.component';
+import { AddTacheComponent } from './tache/add-tache/add-tache.component';
+import { UpadateTacheComponent } from './tache/upadate-tache/upadate-tache.component';
+import { ShowTachesComponent } from './tache/show-taches/show-taches.component';
 
 @NgModule({
   declarations: [
