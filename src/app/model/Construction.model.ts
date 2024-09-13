@@ -50,7 +50,7 @@ export enum Erole {
     quantity: number;
     picture: string;
     infoFornisseur: string;
-    tacheId: number;
+    tacheId: string;
   }
 
   export interface JwtPayload {

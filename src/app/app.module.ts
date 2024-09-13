@@ -14,6 +14,11 @@ import { ShowAllProjetsComponent } from './projet/show-all-projets/show-all-proj
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { IntercepteurService } from './service/intercepteur/intercepteur.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all-resource.component';
+import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
+import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
+import { AssociateComponent } from './ressource/associate/associate.component';
+import { ResourceTacheComponent } from './ressource/resource-tache/resource-tache.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegistreComponent,
     AddProjetComponent,
     UpdateProjetComponent,
-    ShowAllProjetsComponent
+    ShowAllProjetsComponent,
+    ShowAllResourceComponent,
+    AddResourceComponent,
+    UpdateResourceComponent,
+    AssociateComponent,
+    ResourceTacheComponent
   ],
   imports: [
     BrowserModule,

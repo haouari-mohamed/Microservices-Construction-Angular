@@ -1,0 +1,65 @@
+<div class="hero">
+    <div class="hero-warpper">
+      <table id="mat-table" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+       
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="Picture">
+          <th mat-header-cell *matHeaderCellDef> Picture </th>
+          <td mat-cell *matCellDef="let element"> {{element.picture}} </td>
+        </ng-container>
+
+           
+        <ng-container matColumnDef="Info Fornisseur">
+            <th mat-header-cell *matHeaderCellDef> Info Fornisseur </th>
+            <td mat-cell *matCellDef="let element"> {{element.infoFornisseur}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Tache id">
+            <th mat-header-cell *matHeaderCellDef> Tache id </th>
+            <td mat-cell *matCellDef="let element"> {{element.tacheId}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef>Remove</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button  color="warn"  id="remove" (click)="deleteResource(element.id)">
+                Delete
+              </button>
+            </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Update">
+            <th mat-header-cell *matHeaderCellDef>Update</th>
+            <td mat-cell *matCellDef="let element">
+              <a [routerLink]="['/updateresource', element.id]" mat-button color="primary" id="update" >
+                Update
+              </a>
+            </td>
+          </ng-container>
+
+        <ng-container matColumnDef="update">
+          <th mat-header-cell *matHeaderCellDef>Update</th>
+          <td mat-cell *matCellDef="let element">
+            <button  mat-button color="primary" id="update" >
+              Update
+            </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+   

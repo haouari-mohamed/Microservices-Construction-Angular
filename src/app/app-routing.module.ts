@@ -5,13 +5,19 @@ import { RegistreComponent } from './auth/registre/registre.component';
 import { AddProjetComponent } from './projet/add-projet/add-projet.component';
 import { ShowAllProjetsComponent } from './projet/show-all-projets/show-all-projets.component';
 import { UpdateProjetComponent } from './projet/update-projet/update-projet.component';
+import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
+import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all-resource.component';
+import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component:RegistreComponent},
-  { path: 'add', component: AddProjetComponent },
+  { path: 'addprojet', component: AddProjetComponent },
   { path: 'projets', component:ShowAllProjetsComponent},
-  { path: 'updateprojet/:id', component:UpdateProjetComponent}
+  { path: 'updateprojet/:id', component:UpdateProjetComponent},
+  { path: 'resources', component:ShowAllResourceComponent},
+  { path: 'updateresource/:id', component:UpdateResourceComponent},
+  { path: 'addresource', component: AddResourceComponent },
 ];
 
 @NgModule({

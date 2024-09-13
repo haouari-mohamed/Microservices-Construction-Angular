@@ -1,0 +1,16 @@
+<form [formGroup]="ResourceForm" (ngSubmit)="SubmitResource()">
+    <div class="">
+        <input type="text"placeholder="Entrer nom du resource..." formControlName="name" id="name">
+    </div>
+    <div class="">
+        <input type="number" formControlName="quantity" id="quantity">
+    </div>
+    <div class="">
+        <input type="text"  placeholder="Entrer photo du resource..." formControlName="picture" id="picture">
+    </div>
+    <div class="">
+        <input type="text"placeholder="Entrer information sur le fornisseur..." formControlName="infoFornisseur" id="infoFornisseur">
+    </div>
+    <button type="submit">Creer</button>
+
+</form>
