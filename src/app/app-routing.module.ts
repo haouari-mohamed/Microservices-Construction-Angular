@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: 'updateresource/:id', component:UpdateResourceComponent},
   { path: 'addresource', component: AddResourceComponent },
   { path: 'showalltaches/:id', component: ShowTachesComponent },
+  { path: 'showalltaches/:id', component: ShowTachesComponent },
 ];
 
 @NgModule({

@@ -27,6 +27,8 @@ export class ShowTachesComponent implements OnInit {
 
     } )
   }
+
+  
   displayedColumns: string[] = [ 'Description', 'Date Creation', 'Date Fin','Status','Delete','Update','Resources'];
 
   deleteTache(id:number){
