@@ -64,3 +64,7 @@ export enum Erole {
      idTache:number
 
 }
+
+export interface AssociateDto {
+  idRessource:number
+}

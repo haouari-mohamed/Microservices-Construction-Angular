@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Ressources assignées à la tâche</h2>
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Picture</th>
+          <th>Nom</th>
+          <th>Quantity</th>
+          <th>Information fornisseur</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ressource of Ressourcelist">
+            <td>{{ ressource.picture }}</td>
+          <td>{{ ressource.name }}</td>
+          <td>{{ ressource.quantity }}</td>
+          <td>{{ ressource.infoFornisseur }}</td>
+        
+        </tr>
+      </tbody>
+    </table>
+  
+  

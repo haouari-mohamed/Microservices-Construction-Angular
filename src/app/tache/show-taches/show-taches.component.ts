@@ -29,7 +29,7 @@ export class ShowTachesComponent implements OnInit {
   }
 
   
-  displayedColumns: string[] = [ 'Description', 'Date Creation', 'Date Fin','Status','Delete','Update','Resources'];
+  displayedColumns: string[] = [ 'Description', 'Date Creation', 'Date Fin','Status','Delete','Update','Resources','Assign'];
 
   deleteTache(id:number){
     this.srv.deleteTache(id).subscribe(()=>{

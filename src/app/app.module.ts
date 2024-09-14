@@ -22,6 +22,11 @@ import { ResourceTacheComponent } from './ressource/resource-tache/resource-tach
 import { AddTacheComponent } from './tache/add-tache/add-tache.component';
 import { UpadateTacheComponent } from './tache/upadate-tache/upadate-tache.component';
 import { ShowTachesComponent } from './tache/show-taches/show-taches.component';
+import { AssignRessourceComponent } from './tache/assign-ressource/assign-ressource.component';
+import { ShowRessourceTacheComponent } from './tache/show-ressource-tache/show-ressource-tache.component';
+import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
+import { DashMenuComponent } from './dash-admin/dash-menu/dash-menu.component';
+import { ProjetComponent } from './dash-admin/projet/projet.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { ShowTachesComponent } from './tache/show-taches/show-taches.component';
     ResourceTacheComponent,
     AddTacheComponent,
     UpadateTacheComponent,
-    ShowTachesComponent
+    ShowTachesComponent,
+    AssignRessourceComponent,
+    ShowRessourceTacheComponent,
+    DashboardComponent,
+    DashMenuComponent,
+    ProjetComponent
   ],
   imports: [
     BrowserModule,
