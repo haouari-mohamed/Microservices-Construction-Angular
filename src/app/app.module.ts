@@ -27,6 +27,8 @@ import { ShowRessourceTacheComponent } from './tache/show-ressource-tache/show-r
 import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
 import { DashMenuComponent } from './dash-admin/dash-menu/dash-menu.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
+import { TacheComponent } from './dash-admin/tache/tache.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { ProjetComponent } from './dash-admin/projet/projet.component';
     ShowRessourceTacheComponent,
     DashboardComponent,
     DashMenuComponent,
-    ProjetComponent
+    ProjetComponent,
+    TacheComponent,
   ],
   imports: [
     BrowserModule,

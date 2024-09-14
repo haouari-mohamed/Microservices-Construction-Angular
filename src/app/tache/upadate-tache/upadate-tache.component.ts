@@ -19,7 +19,7 @@ export class UpadateTacheComponent implements OnInit{
   constructor(private srv:TacheService,private fb:FormBuilder,private route:ActivatedRoute,private router:Router){}
 
   ngOnInit(): void {
-    this.id=this.route.snapshot.paramMap.get('id')
+    this.id=this.route.snapshot.paramMap.get('idT')
    this.TacheForm=this.fb.group({
     description: '',
     dateFin: '',

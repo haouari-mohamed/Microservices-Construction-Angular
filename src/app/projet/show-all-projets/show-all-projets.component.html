@@ -51,7 +51,7 @@
           <ng-container matColumnDef="Taches">
             <th mat-header-cell *matHeaderCellDef>Taches</th>
             <td mat-cell *matCellDef="let element">
-              <a [routerLink]="['/showalltaches', element.id]" mat-button color="primary" id="update" >
+              <a [routerLink]="['/dashboard/tache', element.id]" mat-button color="primary" id="update" >
                 Taches
               </a>
             </td>

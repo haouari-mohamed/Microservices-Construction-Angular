@@ -38,7 +38,7 @@
           <ng-container matColumnDef="Update">
             <th mat-header-cell *matHeaderCellDef>Update</th>
             <td mat-cell *matCellDef="let element">
-              <a [routerLink]="['/updatetache', element.id]" mat-button color="primary" id="update" >
+              <a [routerLink]="['update', element.id]" mat-button color="primary" id="update" >
                 Update
               </a>
             </td>

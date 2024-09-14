@@ -15,6 +15,7 @@ import { ShowRessourceTacheComponent } from './tache/show-ressource-tache/show-r
 import { AssignRessourceComponent } from './tache/assign-ressource/assign-ressource.component';
 import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
+import { TacheComponent } from './dash-admin/tache/tache.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,11 +32,20 @@ const routes: Routes = [
   // { path: 'assign/:id', component: AssignRessourceComponent },
 
   {path : 'dashboard', component : DashboardComponent , children : [
+    
       {path : 'projet' , component : ProjetComponent , children : [
         {path : '' , component : AddProjetComponent },
         {path : 'update/:id' , component : UpdateProjetComponent },
+      ]},
+
+      {path : 'tache/:id' , component :TacheComponent , children : [
+        {path : '' , component : AddTacheComponent },
+        {path : 'update/:idT' , component : UpadateTacheComponent },
       ]}
+
+
   ]}
+
 ];
 
 @NgModule({
