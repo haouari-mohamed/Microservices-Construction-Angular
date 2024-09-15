@@ -1,0 +1,30 @@
+table{
+    box-shadow: none;
+    background: transparent;
+}
+#remove , #update, #task{
+    padding: 7px;
+    background: #ffe9eb;
+    color: #81175e;
+    border: none;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: .2s;
+}
+#remove, #update{
+    background: white;
+    cursor: pointer;
+    transition: .2s;
+}
+#remove:hover{
+    background: #b9697b;
+    color: white;
+}
+#update:hover{
+    background: #234c67;
+    color: white;
+}
+#task:hover{
+    background: #ffffff;
+}

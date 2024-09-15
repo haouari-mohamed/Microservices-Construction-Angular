@@ -60,7 +60,7 @@ export enum Erole {
     roles: string; 
   }
 
-  export interface AssociateRessourceDTO {
+  export interface AssociateDto {
      idTache:number
 
 }

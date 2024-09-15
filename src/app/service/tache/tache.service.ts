@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Tache } from '../../model/Construction.model';
+import { AssociateDto, Tache } from '../../model/Construction.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -31,4 +31,6 @@ export class TacheService {
   public findById(id:number):Observable<Tache>{
     return this.http.get<Tache>(`${this.urlApi}/TACHE-SERVICE/admin/taches/find/${id}`)
   }
+
+
 }
