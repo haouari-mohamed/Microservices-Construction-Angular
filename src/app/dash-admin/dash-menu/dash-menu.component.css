@@ -7,7 +7,7 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
 }
@@ -33,7 +33,7 @@ ul > li{
 }
 ul > li > a{
     text-decoration: none;
-    color:var(--background-color);
+    color:#81175e;
     margin: 0 10px;
     font-weight: 600;
     margin: 5px 0;
@@ -49,7 +49,7 @@ ul > li > a{
 ul > li > a:hover, #a1{
     background: #ffe9eb;
     text-decoration: none;
-    color:var(--text-color);
+    color:#81175e;
     font-weight: 600;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
 }

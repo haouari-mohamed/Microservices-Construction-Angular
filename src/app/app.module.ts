@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,7 @@ import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
 import { DashMenuComponent } from './dash-admin/dash-menu/dash-menu.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
+import { ResourceComponent } from './dash-admin/resource/resource.component';
 
 
 @NgModule({
@@ -52,6 +55,7 @@ import { TacheComponent } from './dash-admin/tache/tache.component';
     DashMenuComponent,
     ProjetComponent,
     TacheComponent,
+    ResourceComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,8 @@ import { TacheComponent } from './dash-admin/tache/tache.component';
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCardModule,
+    MatButtonModule
 
   ],
   providers: [

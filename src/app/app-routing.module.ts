@@ -16,6 +16,7 @@ import { AssignRessourceComponent } from './tache/assign-ressource/assign-ressou
 import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
+import { ResourceComponent } from './dash-admin/resource/resource.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -41,7 +42,9 @@ const routes: Routes = [
       {path : 'tache/:id' , component :TacheComponent , children : [
         {path : '' , component : AddTacheComponent },
         {path : 'update/:idT' , component : UpadateTacheComponent },
-      ]}
+      ]},
+
+      {path:'resource/:id' ,component:ResourceComponent}
 
 
   ]}
