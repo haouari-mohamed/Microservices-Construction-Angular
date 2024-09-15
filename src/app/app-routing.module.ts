@@ -17,6 +17,7 @@ import { DashboardComponent } from './dash-admin/dashboard/dashboard.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
 import { ResourceComponent } from './dash-admin/resource/resource.component';
+import { AllressourceComponent } from './dash-admin/allressource/allressource.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -44,7 +45,13 @@ const routes: Routes = [
         {path : 'update/:idT' , component : UpadateTacheComponent },
       ]},
 
-      {path:'resource/:id' ,component:ResourceComponent}
+      {path:'resource/:id' ,component:ResourceComponent},
+
+      {path:'resources' ,component:AllressourceComponent,children:[
+        {path : '' , component : AddResourceComponent },
+        {path : 'update/:id' , component : UpdateResourceComponent },
+
+      ]}
 
 
   ]}

@@ -22,6 +22,5 @@ export class ShowRessourceTacheComponent implements OnInit {
       this.Ressourcelist = res;
     });
   }
-  deleteRessource(){}
 
 }

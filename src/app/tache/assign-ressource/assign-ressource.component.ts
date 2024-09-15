@@ -15,10 +15,13 @@ export class AssignRessourceComponent implements OnInit{
   idT:any
   RessourceForm!:FormGroup
   listRessource!:Ressource[]
+  associatedto!:AssociateDto
 
-  constructor(private srv:TacheService,private route:ActivatedRoute,private fb:FormBuilder,private router:Router,private srvr:RessourceService){}
+  constructor(private srv:RessourceService,private route:ActivatedRoute,private fb:FormBuilder,private router:Router,private srvr:RessourceService){}
   ngOnInit(): void {
     this.idT=this.route.snapshot.paramMap.get('id')
+    this.associatedto = { idTache: this.idT };
+
     this.RessourceForm=this.fb.group({
       idRessource:''
     })
@@ -28,10 +31,8 @@ export class AssignRessourceComponent implements OnInit{
   }
 
   Assign(){
-    const ressourceDto:AssociateDto={
-      idRessource: this.RessourceForm.value.idRessource
-    }
-    this.srv.assigneressource(this.idT,ressourceDto).subscribe(()=>{
+    const idr = this.RessourceForm.value.idRessource;
+    this.srv.associate(idr,this.associatedto).subscribe(()=>{
       this.ngOnInit()
 
     })

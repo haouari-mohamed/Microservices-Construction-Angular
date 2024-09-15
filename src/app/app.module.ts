@@ -31,6 +31,7 @@ import { DashMenuComponent } from './dash-admin/dash-menu/dash-menu.component';
 import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
 import { ResourceComponent } from './dash-admin/resource/resource.component';
+import { AllressourceComponent } from './dash-admin/allressource/allressource.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ResourceComponent } from './dash-admin/resource/resource.component';
     ProjetComponent,
     TacheComponent,
     ResourceComponent,
+    AllressourceComponent,
   ],
   imports: [
     BrowserModule,

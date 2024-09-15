@@ -57,3 +57,26 @@ i{
     width: 30%;
     text-align: center;
 }
+ul > li > button{
+    text-decoration: none;
+    color:#81175e;
+    margin: 0 10px;
+    font-weight: 600;
+    margin: 5px 0;
+    padding: 15px 10px;
+    font-size: 18px;
+    border-radius: 12px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: none;
+}
+
+ul > li > button:hover, #a1{
+    background: #ffe9eb;
+    text-decoration: none;
+    color:#81175e;
+    font-weight: 600;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
+}

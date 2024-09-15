@@ -32,8 +32,5 @@ export class TacheService {
     return this.http.get<Tache>(`${this.urlApi}/TACHE-SERVICE/admin/taches/find/${id}`)
   }
 
-  public assigneressource(idt:number,associateDto:AssociateDto){
-    return this.http.put(`${this.urlApi}/TACHE-SERVICE/admin/assign/${idt}`,associateDto)
-  }
 
 }

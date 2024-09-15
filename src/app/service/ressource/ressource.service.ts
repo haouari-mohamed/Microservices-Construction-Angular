@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AssociateRessourceDTO, Ressource } from '../../model/Construction.model';
 import { Observable } from 'rxjs';
+import { AssociateDto, Ressource } from '../../model/Construction.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +30,8 @@ export class RessourceService {
     return this.http.put(`${this.urlApi}/RESSOURCE-SERVICE/admin/ressources/${id}`,ressource)
   }
 
-  public associate(id:number,associatedto:AssociateRessourceDTO){
-    return this.http.put(`${this.urlApi}/RESSOURCE-SERVICE/admin/ressources/associate/${id}`,associatedto)
+  public associate(idr:number,associatedto:AssociateDto){
+    return this.http.put(`${this.urlApi}/RESSOURCE-SERVICE/admin/associate/${idr}`,associatedto)
   }
   public findById(id:number):Observable<Ressource>{
     return this.http.get<Ressource>(`${this.urlApi}/RESSOURCE-SERVICE/admin/find/${id}`)

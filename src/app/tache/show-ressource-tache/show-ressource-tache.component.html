@@ -35,21 +35,18 @@
    -->
 
    <div class="resources-container">
-    <div class="resource-card">
+    <div class="resource-card" *ngFor="let ressource of Ressourcelist">
       <mat-card class="mat-elevation-z4">
         <mat-card-header>
-          <mat-card-title>Traxes</mat-card-title>
+          <mat-card-title>{{ ressource.name }}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="https://static.vecteezy.com/ti/vecteur-libre/p1/24677332-vecteur-illustration-couleur-les-enfants-construction-tractopelle-excavatrice-construction-machine-clipart-vectoriel.jpg" alt="Photo of ">
+        <img mat-card-image [src]="ressource.picture" alt="Photo of {{ ressource.name }}">
         <mat-card-content id="card-content">
-          <h5>Quantity: 34</h5>
-          <p><span>Fournisseur : </span>hmmmmmmmmmmmmmm mmmmmmmmmmmmmmmm mmmmmmmmmmmmmm</p>
+          <h5>Quantity: {{ ressource.quantity }}</h5>
+          <p><span>Fournisseur : </span>{{ ressource.infoFornisseur }}</p>
         </mat-card-content>
-        <mat-card-actions>
-          <button mat-button color="warn" (click)="deleteRessource()">Delete</button>
-        </mat-card-actions>
       </mat-card>
     </div>
-      
   </div>
+  
   
