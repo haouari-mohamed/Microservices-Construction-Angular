@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Ressource } from '../../model/Construction.model';
 import { RessourceService } from '../../service/ressource/ressource.service';
+import { Ressource } from '../../model/Construction.model';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-show-all-resource',
-  templateUrl: './show-all-resource.component.html',
-  styleUrl: './show-all-resource.component.css'
+  selector: 'app-resource-user',
+  templateUrl: './resource-user.component.html',
+  styleUrl: './resource-user.component.css'
 })
-export class ShowAllResourceComponent implements OnInit{
-
+export class ResourceUserComponent implements OnInit{
   constructor(private srv:RessourceService){}
 
   ResourceList!:Ressource[]
@@ -22,12 +21,8 @@ export class ShowAllResourceComponent implements OnInit{
     })
     
   }
-  displayedColumns: string[] = ['Name', 'Quantity', 'Picture', 'Info Fornisseur','Tache id','Delete','Update'];
+  displayedColumns: string[] = ['Name', 'Quantity', 'Picture', 'Info Fornisseur','Tache id'];
 
-  deleteResource(id:number){
-    this.srv.deleteRessource(id).subscribe(()=>{
-      this.ngOnInit()
-    })
-  }
+
 
 }

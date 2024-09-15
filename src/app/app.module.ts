@@ -20,7 +20,6 @@ import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all
 import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
 import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
 import { AssociateComponent } from './ressource/associate/associate.component';
-import { ResourceTacheComponent } from './ressource/resource-tache/resource-tache.component';
 import { AddTacheComponent } from './tache/add-tache/add-tache.component';
 import { UpadateTacheComponent } from './tache/upadate-tache/upadate-tache.component';
 import { ShowTachesComponent } from './tache/show-taches/show-taches.component';
@@ -32,6 +31,13 @@ import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
 import { ResourceComponent } from './dash-admin/resource/resource.component';
 import { AllressourceComponent } from './dash-admin/allressource/allressource.component';
+import { ProjetUserComponent } from './dash-user/projet-user/projet-user.component';
+import { ResourceUserComponent } from './dash-user/resource-user/resource-user.component';
+import { TacheUserComponent } from './dash-user/tache-user/tache-user.component';
+import { MenuUserComponent } from './dash-user/menu-user/menu-user.component';
+import { DashboardUserComponent } from './dash-user/dashboard-user/dashboard-user.component';
+import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/resource-tache-user.component';
+
 
 
 @NgModule({
@@ -46,7 +52,6 @@ import { AllressourceComponent } from './dash-admin/allressource/allressource.co
     AddResourceComponent,
     UpdateResourceComponent,
     AssociateComponent,
-    ResourceTacheComponent,
     AddTacheComponent,
     UpadateTacheComponent,
     ShowTachesComponent,
@@ -58,6 +63,12 @@ import { AllressourceComponent } from './dash-admin/allressource/allressource.co
     TacheComponent,
     ResourceComponent,
     AllressourceComponent,
+    ProjetUserComponent,
+    ResourceUserComponent,
+    TacheUserComponent,
+    MenuUserComponent,
+    DashboardUserComponent,
+    ResourceTacheUserComponent,
   ],
   imports: [
     BrowserModule,
