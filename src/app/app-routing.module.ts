@@ -18,6 +18,11 @@ import { ProjetComponent } from './dash-admin/projet/projet.component';
 import { TacheComponent } from './dash-admin/tache/tache.component';
 import { ResourceComponent } from './dash-admin/resource/resource.component';
 import { AllressourceComponent } from './dash-admin/allressource/allressource.component';
+import { DashboardUserComponent } from './dash-user/dashboard-user/dashboard-user.component';
+import { ProjetUserComponent } from './dash-user/projet-user/projet-user.component';
+import { TacheUserComponent } from './dash-user/tache-user/tache-user.component';
+import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/resource-tache-user.component';
+import { ResourceUserComponent } from './dash-user/resource-user/resource-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,6 +59,13 @@ const routes: Routes = [
       ]}
 
 
+  ]},
+
+  {path:'dashboard-user',component:DashboardUserComponent,children:[
+    {path:'projet',component:ProjetUserComponent},
+    {path:'tache/:id',component:TacheUserComponent},
+    {path:'resources/:id',component:ResourceTacheUserComponent},
+    {path:'resource',component:ResourceUserComponent},
   ]}
 
 ];
