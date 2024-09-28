@@ -4,13 +4,32 @@
         <img src="../../../assets/images/cn.png" alt="">
     </div>
 
+
     <ul>
-        <li><a routerLink="/dashboard/projet" id="a1"><i class="pi pi-home"></i> Acceuil</a></li>
-        <li><a routerLink="/dashboard/resources"><i class="pi pi-hammer"></i> Resources</a></li>
-    </ul>
-    <br>
-    <ul>
-        <li><button id="a1"><i class="pi pi-sign-out"></i> Logout</button></li>
-    </ul>
+        <li>
+          <a 
+            routerLink="/dashboard-user/projet-user" 
+            [ngClass]="{'active': isActive('/dashboard-user/projet-user')}" 
+          >
+            <i class="pi pi-home"></i> Acceuil
+          </a>
+        </li>
+        <li>
+          <a 
+            routerLink="/dashboard-user/resource-user" 
+            [ngClass]="{'active': isActive('/dashboard-user/resource-user')}"
+          >
+            <i class="pi pi-hammer"></i> Resources
+          </a>
+        </li>
+      </ul>
+      <br>
+      <ul>
+        <li>
+          <button (click)="logout(true)" id="logout">
+            <i class="pi pi-sign-out"></i> Logout
+          </button>
+        </li>
+      </ul>
 
 </div>

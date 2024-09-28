@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RessourceService } from '../../service/ressource/ressource.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Ressource } from '../../model/Construction.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-resource',
@@ -11,7 +12,7 @@ import { Ressource } from '../../model/Construction.model';
 export class AddResourceComponent implements OnInit{
   ResourceForm!:FormGroup
 
-  constructor(private srv:RessourceService,private fb:FormBuilder){}
+  constructor(private srv:RessourceService,private fb:FormBuilder,private router:Router){}
 
   ngOnInit(): void {
     this.ResourceForm=this.fb.group({
@@ -35,6 +36,7 @@ export class AddResourceComponent implements OnInit{
     }
     this.srv.addRessource(resource).subscribe(()=>{
       this.ngOnInit()
+      this.router.navigateByUrl('dashboard/resources')
     })
   }
 

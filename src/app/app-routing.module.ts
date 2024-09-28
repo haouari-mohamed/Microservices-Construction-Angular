@@ -23,9 +23,10 @@ import { ProjetUserComponent } from './dash-user/projet-user/projet-user.compone
 import { TacheUserComponent } from './dash-user/tache-user/tache-user.component';
 import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/resource-tache-user.component';
 import { ResourceUserComponent } from './dash-user/resource-user/resource-user.component';
+import { AuthGuard } from './service/guard/auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   // { path: 'addprojet', component: AddProjetComponent },
   // { path: 'projets', component:ShowAllProjetsComponent},
   // { path: 'updateprojet/:id', component:UpdateProjetComponent},
@@ -38,7 +39,7 @@ const routes: Routes = [
   // { path: 'ressourcestache/:id', component: ShowRessourceTacheComponent },
   // { path: 'assign/:id', component: AssignRessourceComponent },
 
-  {path : 'dashboard', component : DashboardComponent , children : [
+  {path : 'dashboard', component : DashboardComponent ,children : [
     
       {path : 'projet' , component : ProjetComponent , children : [
         {path : '' , component : AddProjetComponent },
@@ -62,10 +63,10 @@ const routes: Routes = [
   ]},
 
   {path:'dashboard-user',component:DashboardUserComponent,children:[
-    {path:'projet',component:ProjetUserComponent},
+    {path:'projet-user',component:ProjetUserComponent},
     {path:'tache/:id',component:TacheUserComponent},
     {path:'resources/:id',component:ResourceTacheUserComponent},
-    {path:'resource',component:ResourceUserComponent},
+    {path:'resource-user',component:ResourceUserComponent},
   ]}
 
 ];

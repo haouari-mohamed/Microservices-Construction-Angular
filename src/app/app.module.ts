@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { LoginComponent } from './auth/login/login.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { RegistreComponent } from './auth/registre/registre.component';
 import { AddProjetComponent } from './projet/add-projet/add-projet.component';
 import { UpdateProjetComponent } from './projet/update-projet/update-projet.component';
@@ -78,7 +78,8 @@ import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/reso
     MatTableModule,
     MatPaginatorModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginator
 
   ],
   providers: [

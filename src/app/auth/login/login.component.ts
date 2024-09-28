@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         if (role === 'ADMIN') {
           this.route.navigateByUrl('dashboard/projet');
         } else {
-          this.route.navigateByUrl('dashboard-user/projet');
+          this.route.navigateByUrl('dashboard-user/projet-user');
         }
       }
     });
@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       role:Erole.CUSTOMER
     };
     this.srv.addUser(person).subscribe(() => {
-      this.route.navigateByUrl('login');
+      this.route.navigateByUrl('');
     });
   }
 }
