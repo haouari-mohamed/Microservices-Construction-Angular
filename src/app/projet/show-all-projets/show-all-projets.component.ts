@@ -57,7 +57,7 @@ export class ShowAllProjetsComponent implements OnInit ,AfterViewInit{
   sortColumn: string = 'id';  
   sortDirection: string = 'asc';
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'dateCreation', 'dateFin', 'budget', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'description', 'dateCreation', 'dateFin', 'budget', 'delete','update','tache'];
 
   constructor(private projetService: ProjetService) {}
   @ViewChild(MatSort) sort!: MatSort;
@@ -90,13 +90,13 @@ export class ShowAllProjetsComponent implements OnInit ,AfterViewInit{
 
   onSortChange(sortState: Sort) {
     this.sortColumn = sortState.active;
-    this.sortDirection = sortState.direction || 'asc'; // Si aucune direction, par défaut 'asc'
-    this.loadProjets(); // Recharge les projets avec les nouveaux paramètres de tri
+    this.sortDirection = sortState.direction || 'asc';
+    this.loadProjets(); 
 }
 
   deleteProjet(id: number) {
     this.projetService.deleteProjet(id).subscribe(() => {
-      this.loadProjets();
+      this.ngOnInit();
     });
   }
 
