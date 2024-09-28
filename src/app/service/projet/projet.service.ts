@@ -16,10 +16,11 @@ export class ProjetService {
   public addProjet(projet:Projet){
     return this.http.post(`${this.urlApi}/PROJET-SERVICE/admin/projets`,projet)
   }
-  public findAll(page: number, size: number): Observable<any> {
+  public findAll(page: number, size: number,sortColumn: string, sortDirection: string): Observable<any> {
     let params = new HttpParams()
       .set('page', page.toString())
-      .set('size', size.toString());
+      .set('size', size.toString())
+      .set('sort', `${sortColumn},${sortDirection}`); 
     return this.http.get<any>(`${this.urlApi}/PROJET-SERVICE/projets`, { params });
   }  
   public deleteProjet(id:number ){
