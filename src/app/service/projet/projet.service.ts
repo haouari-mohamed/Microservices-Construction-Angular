@@ -16,13 +16,36 @@ export class ProjetService {
   public addProjet(projet:Projet){
     return this.http.post(`${this.urlApi}/PROJET-SERVICE/admin/projets`,projet)
   }
-  public findAll(page: number, size: number,sortColumn: string, sortDirection: string): Observable<any> {
+
+  
+  findAll(page: number, size: number, sortColumn: string, sortDirection: string, 
+    name?: string, minBudget?: number, maxBudget?: number, startDate?: string, endDate?: string): Observable<any> {
+    
     let params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
-      .set('sort', `${sortColumn},${sortDirection}`); 
+      .set('sort', `${sortColumn},${sortDirection}`);
+  
+    if (name) {
+      params = params.set('name', name);
+    }
+    if (minBudget !== null && minBudget !== undefined) {
+      params = params.set('minBudget', minBudget.toString());
+    }
+    if (maxBudget !== null && maxBudget !== undefined) {
+      params = params.set('maxBudget', maxBudget.toString());
+    }
+    if (startDate) {
+      params = params.set('startDate', startDate);
+    }
+    if (endDate) {
+      params = params.set('endDate', endDate);
+    }
+  
     return this.http.get<any>(`${this.urlApi}/PROJET-SERVICE/projets`, { params });
-  }  
+  }
+  
+
   public deleteProjet(id:number ){
     return this.http.delete(`${this.urlApi}/PROJET-SERVICE/admin/projets/${id}`,)
   }

@@ -7,7 +7,7 @@
 .main-wrapper{
     width: 85%;
     height: 100%;
-    background: pink;
+    background:  #000;
     position: fixed;top: 0;
     right: 0px;
     padding: 20px;
@@ -18,12 +18,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #ff914d;
 }
 .main-hero{
     width: 100%;
     height: 92%;
     padding: 20px;
-    background: #ffe9eb;
+    background: rgba(225, 220, 220, 0.774);
+    color: rgba(232, 176, 73, 0.63);
     border-radius: 12px;
     overflow-y: auto !important;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.225) inset;

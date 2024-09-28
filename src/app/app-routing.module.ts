@@ -33,7 +33,8 @@ const routes: Routes = [
   // { path: 'resources', component:ShowAllResourceComponent},
   // { path: 'updateresource/:id', component:UpdateResourceComponent},
   // { path: 'addresource', component: AddResourceComponent },
-  // { path: 'showalltaches/:id', component: ShowTachesComponent },
+  // 
+  { path: 'showalltaches/:id', component: ShowTachesComponent },
   // { path: 'addtache', component: AddTacheComponent },
   // { path: 'updatetache/:id', component: UpadateTacheComponent },
   // { path: 'ressourcestache/:id', component: ShowRessourceTacheComponent },
@@ -62,12 +63,17 @@ const routes: Routes = [
 
   ]},
 
-  {path:'dashboard-user',component:DashboardUserComponent,children:[
-    {path:'projet-user',component:ProjetUserComponent},
-    {path:'tache/:id',component:TacheUserComponent},
-    {path:'resources/:id',component:ResourceTacheUserComponent},
-    {path:'resource-user',component:ResourceUserComponent},
-  ]}
+  {path: 'dashboard-user', component: DashboardUserComponent, children: [
+    {path: 'projet-user', component: ProjetUserComponent, children: [
+      
+    ]},
+    {path: 'tache/:id', component: TacheUserComponent},
+    {path: 'resources/:id', component: ResourceTacheUserComponent},
+    {path: 'resource-user', component: ResourceUserComponent},
+  ]},
+  { path: 'showalltaches/:id', component: ShowTachesComponent }
+  
+
 
 ];
 
