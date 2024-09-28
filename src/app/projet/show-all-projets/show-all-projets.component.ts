@@ -10,75 +10,39 @@ import { MatSort, Sort } from '@angular/material/sort';
   templateUrl: './show-all-projets.component.html',
   styleUrl: './show-all-projets.component.css'
 })
-export class ShowAllProjetsComponent implements OnInit ,AfterViewInit{
- /*  projets: Projet[] = [];
-  currentPage: number = 1;
-  itemsPerPage: number = 5;
-  totalItems: number = 0;
-  totalPages: number = 0;
+export class ShowAllProjetsComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['Id', 'Name', 'Description', 'Date Creation', 'Date Fin', 'Budget', 'Delete', 'Update', 'Taches'];
-
-  constructor(private projetService: ProjetService) {}
-
-  ngOnInit() {
-    this.loadProjets();
-  }
-
-  loadProjets() {
-    this.projetService.findAll(this.currentPage - 1, this.itemsPerPage).subscribe((response: any) => {
-      this.projets = response.content;
-      this.totalItems = response.totalElements;
-      this.totalPages = response.totalPages;
-    });
-  }
-
-  onPageChange(page: number) {
-    this.currentPage = page;
-    this.loadProjets();
-  }
-
-  deleteProjet(id: number) {
-    this.projetService.deleteProjet(id).subscribe(() => {
-      this.loadProjets();
-    });
-  }
-
-  getPagesArray(): number[] {
-    return Array.from({length: this.totalPages}, (_, i) => i + 1);
-  }
-
- */
   projets: Projet[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 5;
   totalItems: number = 0;
   totalPages: number = 0;
-  sortColumn: string = 'id';  
+  sortColumn: string = 'id';
   sortDirection: string = 'asc';
 
-  displayedColumns: string[] = ['id', 'name', 'description', 'dateCreation', 'dateFin', 'budget', 'delete','update','tache'];
+  displayedColumns: string[] = ['id', 'name', 'description', 'dateCreation', 'dateFin', 'budget', 'delete', 'update', 'tache'];
 
   constructor(private projetService: ProjetService) {}
+  
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit() {
     this.loadProjets();
-   
   }
+
   ngAfterViewInit() {
-    // S'abonner à l'événement sortChange ici
     this.sort.sortChange.subscribe((sortState) => {
       this.onSortChange(sortState);
     });
   }
 
   loadProjets() {
-    this.projetService.findAll(this.currentPage - 1, this.itemsPerPage,this.sortColumn, this.sortDirection).subscribe((response: any) => {
-      this.projets = response.content;
-      this.totalItems = response.totalElements;
-      this.totalPages = response.totalPages;
-    });
+    this.projetService.findAll(this.currentPage - 1, this.itemsPerPage, this.sortColumn, this.sortDirection)
+      .subscribe((response: any) => {
+        this.projets = response.content;
+        this.totalItems = response.totalElements;
+        this.totalPages = response.totalPages;
+      });
   }
 
   onPageChange(page: number) {
@@ -91,17 +55,16 @@ export class ShowAllProjetsComponent implements OnInit ,AfterViewInit{
   onSortChange(sortState: Sort) {
     this.sortColumn = sortState.active;
     this.sortDirection = sortState.direction || 'asc';
-    this.loadProjets(); 
-}
+    this.loadProjets();
+  }
 
   deleteProjet(id: number) {
     this.projetService.deleteProjet(id).subscribe(() => {
-      this.ngOnInit();
+      this.loadProjets(); // Reload the list after deletion
     });
   }
 
   getPagesArray(): number[] {
-    return Array.from({length: this.totalPages}, (_, i) => i + 1);
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 }
-

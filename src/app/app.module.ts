@@ -15,7 +15,7 @@ import { UpdateProjetComponent } from './projet/update-projet/update-projet.comp
 import { ShowAllProjetsComponent } from './projet/show-all-projets/show-all-projets.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { IntercepteurService } from './service/intercepteur/intercepteur.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShowAllResourceComponent } from './ressource/show-all-resource/show-all-resource.component';
 import { AddResourceComponent } from './ressource/add-resource/add-resource.component';
 import { UpdateResourceComponent } from './ressource/update-resource/update-resource.component';
@@ -81,7 +81,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatButtonModule,
     MatPaginator,
-    MatSortModule
+    MatSortModule,
+    FormsModule 
 
   ],
   providers: [
