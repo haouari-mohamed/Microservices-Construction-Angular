@@ -37,6 +37,7 @@ import { TacheUserComponent } from './dash-user/tache-user/tache-user.component'
 import { MenuUserComponent } from './dash-user/menu-user/menu-user.component';
 import { DashboardUserComponent } from './dash-user/dashboard-user/dashboard-user.component';
 import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/resource-tache-user.component';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -79,7 +80,8 @@ import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/reso
     MatPaginatorModule,
     MatCardModule,
     MatButtonModule,
-    MatPaginator
+    MatPaginator,
+    MatSortModule
 
   ],
   providers: [
