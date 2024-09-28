@@ -83,9 +83,7 @@
                   <form [formGroup]="loginForm" (ngSubmit)="loginMethod()">
                     <input formControlName="username" type="text" placeholder="Username">
                     <input formControlName="password" type="password" placeholder="Password">
-                    <div class="checkbox">
-                      <input type="checkbox" id="remember" /><label for="remember">Remember me</label>
-                    </div>
+                  
                     <button class="button submit" type="submit">Login</button>
                   </form>
                 </div>
@@ -93,18 +91,18 @@
           
               <!-- Section gauche -->
               <div class="leftbox">
-                <h2 class="title"><span>PINK</span>&<br>CONSTRUCTION</h2>
+                <h2 class="title"><span>MS</span>-XPERT<br><span>CONSTRUCTION</span></h2>
                 <p class="desc">Pick your perfect <span>bouquet</span></p>
-                <img class="flower smaller" src="../../../assets/images/cn.png" alt="Bouquet">
+                <img class="flower smaller" src="../../../assets/images/Logo2.png" alt="Bouquet">
                 <p class="account">Have an account?</p>
                 <button class="button" (click)="toggleForms(false)">Login</button>
               </div>
           
               <!-- Section droite -->
               <div class="rightbox">
-                <h2 class="title"><span>PINK</span>&<br>CONSTRUCTION</h2>
+                <h2 class="title"><span>MS</span>-XPERT<br><span>CONSTRUCTION</span></h2>
                 <p class="desc">Pick your perfect <span>bouquet</span></p>
-                <img class="flower" src="../../../assets/images/cn.png" alt="Bouquet">
+                <img class="flower" src="../../../assets/images/Logo2.png" alt="Bouquet">
                 <p class="account">Don't have an account?</p>
                 <button class="button" (click)="toggleForms(true)">Sign Up</button>
               </div>

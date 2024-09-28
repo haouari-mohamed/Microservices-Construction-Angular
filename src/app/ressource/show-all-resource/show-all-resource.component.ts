@@ -13,6 +13,10 @@ export class ShowAllResourceComponent implements OnInit{
   constructor(private srv:RessourceService){}
 
   ResourceList!:Ressource[]
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
+  totalItems: number = 0;
+  totalPages: number = 0;
   dataSource = new MatTableDataSource<Ressource>();
 
   ngOnInit(): void {
@@ -28,6 +32,15 @@ export class ShowAllResourceComponent implements OnInit{
     this.srv.deleteRessource(id).subscribe(()=>{
       this.ngOnInit()
     })
+  }
+  getPagesArray(): number[] {
+    return Array.from({length: this.totalPages}, (_, i) => i + 1);
+  }
+  onPageChange(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.ngOnInit();
+    }
   }
 
 }
