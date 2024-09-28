@@ -3,6 +3,10 @@ form{
     display: flex;
     align-items: center;
 }
+label{
+    color: white !important;
+    font-weight: 700;
+}
 .group{
     width: 30%;
     display: flex;

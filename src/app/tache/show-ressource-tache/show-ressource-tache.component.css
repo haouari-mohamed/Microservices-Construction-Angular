@@ -7,7 +7,7 @@
   }
   
   .mat-elevation-z4{
-    background: #ffe9eb !important;
+    background: #222 !important;
     border: none;
     box-shadow: none;
     border-radius: 8px;
@@ -24,7 +24,6 @@
     
   }
   
-  
   .mat-card-content {
     font-size: 14px;
   }
@@ -37,12 +36,30 @@
     padding: 10px 0 ;
     font-weight: 900;
     font-size: 18px;
+    color: white;
   }
   span{
     text-decoration: underline;
     font-weight: 700;
+    color: #ff914d !important;
   }
-  button{
-    padding: 8px;
-    background: pink;
+  p{
+    color: white;
+  }
+  #title{
+    color: white !important;
+    background: #000 !important;
+    padding: 10px !important;
+    border-radius: 10px;
+  }
+  img{
+    width: 70% !important;
+    margin:  0 auto !important;
+  }
+  #card-content{
+    width: 95% !important;
+    margin: 10px auto !important;
+    padding: 10px !important;
+    background: #000 !important;
+    border-radius: 10px !important;
   }

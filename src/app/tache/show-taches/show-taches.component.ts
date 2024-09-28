@@ -13,6 +13,10 @@ export class ShowTachesComponent implements OnInit {
 
   listTache! : Tache[]
   id! : any
+  currentPage: number = 1;
+  itemsPerPage: number = 5;
+  totalItems: number = 0;
+  totalPages: number = 0;
 
   constructor(private srv: TacheService , private router: ActivatedRoute){ }
 
@@ -20,7 +24,6 @@ export class ShowTachesComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.router.snapshot.paramMap.get('id')
-
     this.srv.showtache(this.id).subscribe((res :Tache[] ) => {
       this.listTache = res
       this.dataSource.data=this.listTache;
@@ -35,5 +38,14 @@ export class ShowTachesComponent implements OnInit {
     this.srv.deleteTache(id).subscribe(()=>{
       this.ngOnInit()
     })
+  }
+  getPagesArray(): number[] {
+    return Array.from({length: this.totalPages}, (_, i) => i + 1);
+  }
+  onPageChange(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.ngOnInit();
+    }
   }
 }
