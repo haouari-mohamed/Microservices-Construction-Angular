@@ -1,7 +1,7 @@
 .menu{
     width: 15%;
     height: 100%;
-    background: pink;
+    background: black;
     position: fixed;
     top: 0px;
     padding: 10px;
@@ -33,7 +33,7 @@ ul > li{
 }
 ul > li > a{
     text-decoration: none;
-    color:#81175e;
+    color:white;
     margin: 0 10px;
     font-weight: 600;
     margin: 5px 0;
@@ -47,9 +47,9 @@ ul > li > a{
 }
 
 ul > li > a:hover, #a1{
-    background: #ffe9eb;
+    background: #222;
     text-decoration: none;
-    color:#81175e;
+    color:#ff914d;
     font-weight: 600;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
 }
@@ -59,7 +59,7 @@ i{
 }
 ul > li > button{
     text-decoration: none;
-    color:#81175e;
+    color:#ff914d;
     margin: 0 10px;
     font-weight: 600;
     margin: 5px 0;
@@ -74,25 +74,25 @@ ul > li > button{
 }
 
 ul > li > button:hover{
-    background: #ffe9eb;
+    background: black;
     text-decoration: none;
-    color:#81175e;
+    color:#ff914d;
     font-weight: 600;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
 }
 
 .active {
-    background: #ffe9eb;
-    color: #81175e;
+    background: #222;
+    color: #ff914d !important;
     font-weight: 600;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
   }
   
   ul > li > a:hover, ul > li > button:hover {
-    background: #ffe9eb;
-    color: #81175e;
+    background: black;
+    color: #ff914d;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
   }
   #logout{
-    background:#ffe9eb;
+    background:#222;
   }
