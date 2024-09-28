@@ -45,11 +45,12 @@ export class UpadateTacheComponent implements OnInit{
       description: this.TacheForm.value.description,
       dateCreation: '',
       dateFin: this.TacheForm.value.dateFin,
-      status:this.TacheForm.value.status ,
+      status:this.TacheForm.value.status,
       projetId:  this.idProjet
     }
     this.srv.updateTache(this.id,tache).subscribe(()=>{
-      this.router.navigateByUrl(`showalltaches/${this.idProjet}`)
+      this.ngOnInit()
+      this.router.navigateByUrl(`/dashboard/tache/${this.idProjet}`)
     })
   }
 

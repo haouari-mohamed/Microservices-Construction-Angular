@@ -73,10 +73,26 @@ ul > li > button{
     border: none;
 }
 
-ul > li > button:hover, #a1{
+ul > li > button:hover{
     background: #ffe9eb;
     text-decoration: none;
     color:#81175e;
     font-weight: 600;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
 }
+
+.active {
+    background: #ffe9eb;
+    color: #81175e;
+    font-weight: 600;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
+  }
+  
+  ul > li > a:hover, ul > li > button:hover {
+    background: #ffe9eb;
+    color: #81175e;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.113) inset;
+  }
+  #logout{
+    background:#ffe9eb;
+  }

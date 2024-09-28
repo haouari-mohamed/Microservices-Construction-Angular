@@ -46,3 +46,16 @@
     padding: 8px;
     background: pink;
   }
+  .show-resource{
+    width: 100%;
+    background: pink;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+h2{
+    font-size: 20px;
+    padding: 10px 0; 
+    color: white;
+    font-weight: 900;
+}

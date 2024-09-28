@@ -9,13 +9,17 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrl: './projet-user.component.css'
 })
 export class ProjetUserComponent implements OnInit{
-  TableProjet!:Projet[]
+  ngOnInit(): void {
+    
+  }
+  /* TableProjet!:Projet[]
+  pageIndex = 0;
 
   constructor(private srv:ProjetService){}
   dataSource = new MatTableDataSource<Projet>();
 
   ngOnInit(): void {
-    this.srv.findAll().subscribe((res:Projet[])=>{
+    this.srv.findAll(this.pageIndex).subscribe((res:Projet[])=>{
       this.TableProjet=res
       this.dataSource.data=this.TableProjet;
 
@@ -23,5 +27,5 @@ export class ProjetUserComponent implements OnInit{
     
   }
   displayedColumns: string[] = ['Name', 'Description', 'Date Creation', 'Date Fin','Budget','Taches'];
-
+ */
 }

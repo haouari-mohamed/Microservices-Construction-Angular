@@ -48,6 +48,7 @@ export class UpdateResourceComponent implements OnInit{
     }
     this.srv.updateRessource(this.ResourceId,resource).subscribe(()=>{
       this.ngOnInit()
+      this.router.navigateByUrl('dashboard/resources')
     })
   }
 
