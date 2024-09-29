@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Ressource } from '../../model/Construction.model';
 import { RessourceService } from '../../service/ressource/ressource.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-show-all-resource',
@@ -17,12 +18,16 @@ export class ShowAllResourceComponent implements OnInit{
   itemsPerPage: number = 5;
   totalItems: number = 0;
   totalPages: number = 0;
+  sortColumn: string = 'quantity';
+  sortDirection: string = 'asc';
   dataSource = new MatTableDataSource<Ressource>();
 
   ngOnInit(): void {
-    this.srv.showAll().subscribe((res:Ressource[])=>{
-      this.ResourceList=res
+    this.srv.showAll(this.currentPage - 1, this.itemsPerPage, this.sortColumn, this.sortDirection).subscribe((res:any)=>{
+      this.ResourceList=res.content
       this.dataSource.data=this.ResourceList;
+      this.totalItems = res.totalElements;
+      this.totalPages = res.totalPages;
     })
     
   }
@@ -33,6 +38,18 @@ export class ShowAllResourceComponent implements OnInit{
       this.ngOnInit()
     })
   }
+  onSortChange(sort: Sort) {
+    const direction = sort.direction ? sort.direction : 'asc';
+    this.loadTachesWithSort(sort.active, direction);
+}
+
+ loadTachesWithSort(sortColumn: string, sortDirection: string) {
+  this.srv.showAll(this.currentPage - 1, this.itemsPerPage, sortColumn, sortDirection).subscribe(res => {
+    this.dataSource.data = res.content;
+    this.totalItems = res.totalElements;
+    this.totalPages = res.totalPages;
+  });
+}
   getPagesArray(): number[] {
     return Array.from({length: this.totalPages}, (_, i) => i + 1);
   }

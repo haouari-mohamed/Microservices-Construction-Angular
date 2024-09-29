@@ -60,7 +60,7 @@ export class ShowAllProjetsComponent implements OnInit, AfterViewInit {
 
   deleteProjet(id: number) {
     this.projetService.deleteProjet(id).subscribe(() => {
-      this.loadProjets(); // Reload the list after deletion
+      this.ngOnInit(); 
     });
   }
 

@@ -25,7 +25,7 @@ export class AssignRessourceComponent implements OnInit{
     this.RessourceForm=this.fb.group({
       idRessource:''
     })
-    this.srvr.showAll().subscribe((res: Ressource[]) => {
+    this.srvr.allRessources().subscribe((res: Ressource[]) => {
       this.listRessource = res;
     });
   }
