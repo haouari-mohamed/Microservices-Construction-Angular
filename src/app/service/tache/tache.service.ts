@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AssociateDto, Tache } from '../../model/Construction.model';
 import { Observable } from 'rxjs';
@@ -31,6 +31,13 @@ export class TacheService {
   public findById(id:number):Observable<Tache>{
     return this.http.get<Tache>(`${this.urlApi}/TACHE-SERVICE/admin/taches/find/${id}`)
   }
-
+  
+  public showTacheWithFilter(id: number, description?: string): Observable<Tache[]> {
+    let params = new HttpParams();
+    if (description) {
+      params = params.set('description', description);
+    }
+    return this.http.get<Tache[]>(`${this.urlApi}/TACHE-SERVICE/taches/${id}`, { params });
+  }
 
 }

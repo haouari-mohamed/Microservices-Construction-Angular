@@ -7,28 +7,32 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-tache-user',
   templateUrl: './tache-user.component.html',
-  styleUrl: './tache-user.component.css'
+  styleUrls: ['./tache-user.component.css'] 
 })
-export class TacheUserComponent implements OnInit{
-  listTache! : Tache[]
-  id! : any
-
-  constructor(private srv: TacheService , private router: ActivatedRoute){ }
-
+export class TacheUserComponent implements OnInit {
+  listTache!: Tache[];
+  id!: any;
+  description: string = ''; 
   dataSource = new MatTableDataSource<Tache>();
+  
+ 
+  displayedColumns: string[] = ['Description', 'Date Creation', 'Date Fin', 'Status', 'Resources'];
+
+  constructor(private srv: TacheService, private router: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.id = this.router.snapshot.paramMap.get('id')
-
-    this.srv.showtache(this.id).subscribe((res :Tache[] ) => {
-      this.listTache = res
-      this.dataSource.data=this.listTache;
-
-    } )
+    this.id = this.router.snapshot.paramMap.get('id');
+    this.loadTaches(); 
   }
 
-  
-  displayedColumns: string[] = [ 'Description', 'Date Creation', 'Date Fin','Status','Resources'];
+  loadTaches(): void {
+    this.srv.showTacheWithFilter(this.id, this.description).subscribe((res: Tache[]) => {
+      this.listTache = res;
+      this.dataSource.data = this.listTache;
+    });
+  }
 
-
+  onFilterChange(): void {
+    this.loadTaches(); 
+  }
 }
