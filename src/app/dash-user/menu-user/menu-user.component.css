@@ -1,7 +1,7 @@
 .menu{
     width: 15%;
     height: 100%;
-    background: rgba(15, 15, 15, 0.491);
+    background: rgba(0, 0, 0, 0.911);
     position: fixed;
     top: 0px;
     padding: 10px;
@@ -10,6 +10,7 @@
     justify-content: space-around;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
+   
 }
 
 .logo{
