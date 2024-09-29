@@ -12,15 +12,26 @@ export class TacheService {
 
   urlApi="http://localhost:8888";
 
-  public showtache(id:number,page: number, size: number, sortColumn: string, sortDirection: string):Observable<any>{
+  public showtache(id:number,page: number, size: number, sortColumn: string, sortDirection: string, description?: string):Observable<any>{
      
     let params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
       .set('sort', `${sortColumn},${sortDirection}`);
+      if (description) {
+        params = params.set('description', description);
+      }
   
     return this.http.get<any>(`${this.urlApi}/TACHE-SERVICE/taches/${id}`, { params })
   }
+
+  /* public showTacheWithFilter(id: number, description?: string): Observable<Tache[]> {
+    let params = new HttpParams();
+    if (description) {
+      params = params.set('description', description);
+    }
+    return this.http.get<Tache[]>(`${this.urlApi}/TACHE-SERVICE/taches/${id}`, { params });
+  } */
  
   public addTache(id:number,tache:Tache){
     return this.http.post(`${this.urlApi}/TACHE-SERVICE/admin/taches/${id}`,tache)

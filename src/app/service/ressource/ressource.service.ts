@@ -13,11 +13,12 @@ export class RessourceService {
 
   urlApi="http://localhost:8888";
 
-  public showAll(page: number, size: number, sortColumn: string, sortDirection: string):Observable<any>{
+  public showAll(page: number, size: number, sortColumn: string, sortDirection: string, name: String):Observable<any>{
     let params = new HttpParams()
     .set('page', page.toString())
     .set('size', size.toString())
     .set('sort', `${sortColumn},${sortDirection}`);
+   
 
     return this.http.get<any>(`${this.urlApi}/RESSOURCE-SERVICE/ressources`,{ params })
   }

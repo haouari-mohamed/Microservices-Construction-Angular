@@ -31,7 +31,7 @@ export class TacheUserComponent implements OnInit,AfterViewInit{
 
   ngOnInit(): void {
     this.id = this.router.snapshot.paramMap.get('id')
-    this.srv.showtache(this.id, this.currentPage - 1, this.itemsPerPage, 'dateFin', 'asc').subscribe((res :any ) => {
+    this.srv.showtache(this.id, this.currentPage - 1, this.itemsPerPage, 'dateFin', 'asc',this.description).subscribe((res :any ) => {
       this.listTache = res.content;
       this.dataSource.data=this.listTache;
       this.totalItems = res.totalElements;
@@ -68,14 +68,14 @@ export class TacheUserComponent implements OnInit,AfterViewInit{
   }
 
 
-  loadTaches(): void {
+/*   loadTaches(): void {
     this.srv.showTacheWithFilter(this.id, this.description).subscribe((res: Tache[]) => {
       this.listTache = res;
       this.dataSource.data = this.listTache;
     });
-  }
+  } */
 
   onFilterChange(): void {
-    this.loadTaches(); 
+    this.ngOnInit(); 
   }
 }
