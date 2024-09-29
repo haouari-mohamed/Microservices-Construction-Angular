@@ -1,7 +1,11 @@
+<div class="filter-section">
+  <label for="description">Description:</label>
+  <input id="description" type="text" [(ngModel)]="description" placeholder="Enter description">
+  <button (click)="onFilterChange()">Apply Filters</button>
+</div>
 
 <div class="show-project">
-    <h2>Taches</h2>
-  
+  <h2>Taches</h2>
       <table id="mat-table" mat-table [dataSource]="dataSource"  matSort (matSortChange)="onSortChange($event)" class="mat-elevation-z8">
 
       

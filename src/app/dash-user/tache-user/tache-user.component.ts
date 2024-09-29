@@ -8,8 +8,9 @@ import { MatSort, Sort } from '@angular/material/sort';
 @Component({
   selector: 'app-tache-user',
   templateUrl: './tache-user.component.html',
-  styleUrl: './tache-user.component.css'
+  styleUrls: ['./tache-user.component.css'] 
 })
+
 export class TacheUserComponent implements OnInit,AfterViewInit{
   listTache! : Tache[]
   id! : any
@@ -17,15 +18,19 @@ export class TacheUserComponent implements OnInit,AfterViewInit{
   itemsPerPage: number = 5;
   totalItems: number = 0;
   totalPages: number = 0;
+  description: string = ''; 
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private srv: TacheService , private router: ActivatedRoute){ }
 
   dataSource = new MatTableDataSource<Tache>();
+  
+ 
+  displayedColumns: string[] = ['Description', 'Date Creation', 'Date Fin', 'Status', 'Resources'];
+
 
   ngOnInit(): void {
     this.id = this.router.snapshot.paramMap.get('id')
-
     this.srv.showtache(this.id, this.currentPage - 1, this.itemsPerPage, 'dateFin', 'asc').subscribe((res :any ) => {
       this.listTache = res.content;
       this.dataSource.data=this.listTache;
@@ -34,6 +39,7 @@ export class TacheUserComponent implements OnInit,AfterViewInit{
 
     } )
   }
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
@@ -62,8 +68,14 @@ export class TacheUserComponent implements OnInit,AfterViewInit{
   }
 
 
-  
-  displayedColumns: string[] = [ 'Description', 'Date Creation', 'Date Fin','Status','Resources'];
+  loadTaches(): void {
+    this.srv.showTacheWithFilter(this.id, this.description).subscribe((res: Tache[]) => {
+      this.listTache = res;
+      this.dataSource.data = this.listTache;
+    });
+  }
 
-
+  onFilterChange(): void {
+    this.loadTaches(); 
+  }
 }

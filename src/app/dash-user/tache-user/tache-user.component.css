@@ -1,13 +1,19 @@
 .show-project{
     width: 100%;
-    background: pink;
+    background: black;
     border-radius: 12px;
+    border: 2px solid white;
     padding: 20px;
     margin-bottom: 20px;
+    color: white;
+    
+    
 }
+
 table{
     box-shadow: none;
     background: transparent;
+    color: white;
 }
  #resources{
     padding: 7px;
@@ -28,4 +34,13 @@ h2{
     padding: 10px 0; 
     color: white;
     font-weight: 900;
+}
+th{
+    color : orange
+}
+td{
+    color : white
+}
+th, td{
+    border: 1px solid white;
 }

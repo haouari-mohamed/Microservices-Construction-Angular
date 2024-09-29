@@ -1,13 +1,25 @@
 .show-project{
     width: 100%;
-    background: pink;
+    background: black;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
+    
+}
+th{
+    color: orange
+}
+td{
+    color: white
+}
+th,td{
+    border: 2px solid white;
+    
 }
 table{
     box-shadow: none;
     background: transparent;
+    
 }
 #remove , #update{
     padding: 7px;
