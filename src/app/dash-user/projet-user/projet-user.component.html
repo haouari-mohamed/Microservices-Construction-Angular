@@ -76,6 +76,7 @@
 </table>
 
 
+
 <nav>
   <ul class="pagination justify-content-center">
     <li class="page-item" [class.disabled]="currentPage === 1">
@@ -85,7 +86,7 @@
     </li>
 
     <li *ngFor="let page of getPagesArray()" class="page-item" [class.active]="page === currentPage">
-      <button class="page-link" (click)="onPageChange(page)">{{ page }}</button>
+      <button class="page-link page" (click)="onPageChange(page)">{{ page }}</button>
     </li>
 
     <li class="page-item" [class.disabled]="currentPage === totalPages">

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AssociateDto, Tache } from '../../model/Construction.model';
 import { Observable } from 'rxjs';
@@ -12,8 +12,14 @@ export class TacheService {
 
   urlApi="http://localhost:8888";
 
-  public showtache(id:number):Observable<Tache[]>{
-    return this.http.get<Tache[]>(`${this.urlApi}/TACHE-SERVICE/taches/${id}`)
+  public showtache(id:number,page: number, size: number, sortColumn: string, sortDirection: string):Observable<any>{
+     
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString())
+      .set('sort', `${sortColumn},${sortDirection}`);
+  
+    return this.http.get<any>(`${this.urlApi}/TACHE-SERVICE/taches/${id}`, { params })
   }
  
   public addTache(id:number,tache:Tache){

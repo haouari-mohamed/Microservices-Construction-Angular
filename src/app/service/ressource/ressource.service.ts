@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AssociateDto, Ressource } from '../../model/Construction.model';
@@ -13,8 +13,17 @@ export class RessourceService {
 
   urlApi="http://localhost:8888";
 
-  public showAll():Observable<Ressource[]>{
-    return this.http.get<Ressource[]>(`${this.urlApi}/RESSOURCE-SERVICE/ressources`)
+  public showAll(page: number, size: number, sortColumn: string, sortDirection: string):Observable<any>{
+    let params = new HttpParams()
+    .set('page', page.toString())
+    .set('size', size.toString())
+    .set('sort', `${sortColumn},${sortDirection}`);
+
+    return this.http.get<any>(`${this.urlApi}/RESSOURCE-SERVICE/ressources`,{ params })
+  }
+  public allRessources():Observable<Ressource[]>{
+  
+    return this.http.get<Ressource[]>(`${this.urlApi}/RESSOURCE-SERVICE/resces`)
   }
   public findRessourceTache(id:number):Observable<Ressource[]>{
     return this.http.get<Ressource[]>(`${this.urlApi}/RESSOURCE-SERVICE/ressources/${id}`)
