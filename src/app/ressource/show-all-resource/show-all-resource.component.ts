@@ -18,12 +18,13 @@ export class ShowAllResourceComponent implements OnInit{
   itemsPerPage: number = 5;
   totalItems: number = 0;
   totalPages: number = 0;
+  name: string ='';
   sortColumn: string = 'quantity';
   sortDirection: string = 'asc';
   dataSource = new MatTableDataSource<Ressource>();
 
   ngOnInit(): void {
-    this.srv.showAll(this.currentPage - 1, this.itemsPerPage, this.sortColumn, this.sortDirection).subscribe((res:any)=>{
+    this.srv.showAll(this.currentPage - 1, this.itemsPerPage, this.sortColumn, this.sortDirection, this.name).subscribe((res:any)=>{
       this.ResourceList=res.content
       this.dataSource.data=this.ResourceList;
       this.totalItems = res.totalElements;
@@ -44,7 +45,7 @@ export class ShowAllResourceComponent implements OnInit{
 }
 
  loadTachesWithSort(sortColumn: string, sortDirection: string) {
-  this.srv.showAll(this.currentPage - 1, this.itemsPerPage, sortColumn, sortDirection).subscribe(res => {
+  this.srv.showAll(this.currentPage - 1, this.itemsPerPage, sortColumn, sortDirection, this.name).subscribe(res => {
     this.dataSource.data = res.content;
     this.totalItems = res.totalElements;
     this.totalPages = res.totalPages;

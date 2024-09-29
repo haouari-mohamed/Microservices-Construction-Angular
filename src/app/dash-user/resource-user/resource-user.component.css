@@ -1,9 +1,65 @@
+
+.filter-section {
+    background-color: black; 
+    color: white; 
+    border: 2px solid white; 
+    padding: 20px;
+    border-radius: 8px;
+    padding-bottom: 30px;
+    
+  
+  }
+  
+
+  .filter-section input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid white; 
+    background-color: black; 
+    color: white;
+    border-radius: 4px;
+    transition: all 0.3s ease; 
+    
+   
+  }
+  
+  .filter-section input:hover {
+    border-color: orange;
+  }
+  .filtre{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+  .filter-section button {
+    background-color: black; 
+    color: white; 
+    border: 1px solid white; 
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease; 
+  }
+  
+  .filter-section button:hover {
+    background-color: white; 
+    color: black; 
+  }
+
+
+
+
+
+
 .show-project{
     width: 100%;
     background: black;
     border-radius: 12px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+    border: 2px solid white; 
+margin-top: 30px;
     
 }
 th{
