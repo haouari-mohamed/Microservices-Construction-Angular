@@ -38,6 +38,7 @@ import { MenuUserComponent } from './dash-user/menu-user/menu-user.component';
 import { DashboardUserComponent } from './dash-user/dashboard-user/dashboard-user.component';
 import { ResourceTacheUserComponent } from './dash-user/resource-tache-user/resource-tache-user.component';
 import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -82,7 +83,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatButtonModule,
     MatPaginator,
     MatSortModule,
-    FormsModule 
+    FormsModule ,
+    MatFormFieldModule,
 
   ],
   providers: [
