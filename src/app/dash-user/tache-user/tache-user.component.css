@@ -2,34 +2,40 @@
 .filter-section {
     background-color: black; 
     color: white; 
-    border: 1px solid white; 
+    border: 2px solid white; 
     padding: 20px;
     border-radius: 8px;
-    max-width: 400px;
-    display: flex
+    padding-bottom: 30px;
+    
+  
   }
   
-  /* Input field styling */
+
   .filter-section input {
-    width: 100%;
+    width: 70%;
     padding: 10px;
-    border: 1px solid white; /* White border for input */
-    background-color: black; /* Black background */
-    color: white; /* White text */
+    border: 1px solid white; 
+    background-color: black; 
+    color: white;
     border-radius: 4px;
-    transition: all 0.3s ease; /* Smooth transition */
-    margin-bottom: 15px;
+    transition: all 0.3s ease; 
+    
+   
   }
   
   .filter-section input:hover {
-    border-color: orange; /* Hover effect: change border to orange */
+    border-color: orange;
+  }
+  .filtre{
+    display: flex;
+    justify-content: space-between;
   }
   
-  /* Button styling */
+
   .filter-section button {
-    background-color: black; /* Button background */
-    color: white; /* Button text */
-    border: 1px solid white; /* White border */
+    background-color: black; 
+    color: white; 
+    border: 1px solid white; 
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 4px;
@@ -37,7 +43,7 @@
   }
   
   .filter-section button:hover {
-    background-color: white; /
+    background-color: white; 
     color: black; 
   }
   
@@ -54,7 +60,7 @@
     padding: 20px;
     margin-bottom: 20px;
     color: white;
-    
+    margin-top: 27px;
     
 }
 

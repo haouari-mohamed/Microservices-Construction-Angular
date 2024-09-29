@@ -1,7 +1,10 @@
 <div class="filter-section card">
   <label for="description">Description:</label>
-  <input id="description" type="text" [(ngModel)]="description" placeholder="Enter description" />
-  <button (click)="onFilterChange()">Apply Filters</button>
+  <div class="filtre">
+    <input id="description" type="text" [(ngModel)]="description" placeholder="Enter description" />
+    <button (click)="onFilterChange()">Apply Filters</button>
+  </div>
+ 
 </div>
 
 <div class="show-project">
